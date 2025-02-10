@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+    iframe#webpack-dev-server-client-overlay {
+        display: none !important
+    }
+    
+
+    /* primary colors */
+    --primary-color: #191919;
+
+    /* Secondary colors */
+    --secondary-color: #d9d9d9;
+
+    /* white color */
+    --white-color: #FFFFFF;
+    --bg-color:  #FFFFFF;
+    --bg-body:#fafbfb;
+    --title:#CCCCCC;
+    --dashboard-heading:#c7cdd6;
+    --description:white;
+}
+
+[data-theme="light"] {
+    --bg-color:  #FFFFFF;
+    --bg-body:#fafbfb;
+    --title:#42446E;
+    --dashboard-heading:#101828;
+    --description:#475467;
+}
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg-body);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: auto;
+    height: 100%;
+    overflow-y: auto;
+}
