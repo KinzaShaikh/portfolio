@@ -74,7 +74,7 @@ function Header() {
           }}
           to={"/"}
         >
-          {"<KINZA./>"}
+          {"<KINZA/>"}
         </Link>
         {!isMobile && (
           <div className={styles.menuContainer}>

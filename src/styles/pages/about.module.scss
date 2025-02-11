@@ -1,0 +1,45 @@
+@import "../global.scss";
+.container {
+  width: 100%;
+  background-color: var(--primary-color);
+  padding-top: 32px;
+  padding-bottom: 32px;
+  .heading {
+    text-align: center;
+    color: var(--description);
+    font-size: 26px;
+    font-family: Plus Jakarta Sans;
+    line-height: 22.4px;
+    word-wrap: break-word;
+  }
+  .description {
+    text-align: center;
+    font-family: Plus Jakarta Sans;
+    font-weight: 500px;
+    font-size: 17px;
+    color: var(--dashboard-heading);
+  }
+  .intro {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 64px;
+    padding-right: 64px;
+    .heading {
+      color: var(--description);
+      font-family: Plus Jakarta Sans;
+      line-height: 22.4px;
+      font-size: 22px;
+      word-wrap: break-word;
+    }
+    .text {
+      font-family: Plus Jakarta Sans;
+      font-weight: 500px;
+      font-size: 17px;
+      line-height: 26.4px;
+      color: var(--secondary-color);
+    }
+  }
+  
+}
