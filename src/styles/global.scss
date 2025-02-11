@@ -11,7 +11,7 @@
 
     /* Secondary colors */
     --secondary-color: #d9d9d9;
-
+    --blue-color:#3f7bc9;
     /* white color */
     --white-color: #FFFFFF;
     --bg-color:  #FFFFFF;
@@ -22,6 +22,10 @@
 }
 
 [data-theme="light"] {
+    --primary-color: #FFFFFF;
+
+    /* Secondary colors */
+    --secondary-color: #101828;
     --bg-color:  #FFFFFF;
     --bg-body:#fafbfb;
     --title:#42446E;

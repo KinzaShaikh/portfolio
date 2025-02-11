@@ -1,9 +1,12 @@
-import React from 'react'
-
+import React from "react";
+import About from "./about";
+import styles from "../styles/pages/home.module.scss";
 function Home() {
   return (
-    <div>Portfolio</div>
-  )
+    <div className={styles.container}>
+      <About />
+    </div>
+  );
 }
 
-export default Home
+export default Home;
