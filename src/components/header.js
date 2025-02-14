@@ -67,7 +67,7 @@ function Header() {
         <Link
           style={{
             color: "#3f7bc9",
-            fontSize: 26,
+            fontSize: 28,
             fontFamily: "Plus Jakarta Sans",
             fontWeight: 600,
             textDecoration: "none",

@@ -1,0 +1,186 @@
+@import "../global.scss";
+.container {
+  width: 100%;
+  background-color: var(--primary-color);
+  padding-top: 32px;
+  padding-bottom: 32px;
+  .heading {
+    text-align: center;
+    color: var(--description);
+    font-size: 36px;
+    font-family: Plus Jakarta Sans;
+    line-height: 22.4px;
+    word-wrap: break-word;
+  }
+  .description {
+    text-align: center;
+    font-family: Plus Jakarta Sans;
+    font-weight: 500px;
+    font-size: 19px;
+    color: var(--dashboard-heading);
+  }
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    padding: 40px 0;
+
+    .projectCard {
+      background: var(--card-color);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease-in-out;
+      display: flex;
+      flex-direction: column;
+
+      &:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--card-shadow);
+      }
+
+    //   .imageSlider {
+    //     position: relative;
+    //     // width: 100%;
+    //     height: 400px;
+    //     // align-self: center;
+    //     img {
+    //     //   width: 100%;
+    //       height: 100%;
+    //     //   object-fit: cover;
+    //       border-radius: 10px 10px 0 0;
+    //     }
+
+    //     .sliderNav {
+    //       position: absolute;
+    //       top: 50%;
+    //       left: 0;
+    //       right: 0;
+    //       display: flex;
+    //       justify-content: space-between;
+    //       transform: translateY(-50%);
+    //       padding: 0 12px;
+
+    //       button {
+    //         background: rgba(0, 0, 0, 0.5);
+    //         color: white;
+    //         border: none;
+    //         font-family: Plus Jakarta Sans;
+    //         padding: 6px 12px;
+    //         cursor: pointer;
+    //         border-radius: 50%;
+    //         font-size: 16px;
+    //         transition: background 0.2s;
+
+    //         &:hover {
+    //           background: rgba(0, 0, 0, 0.7);
+    //         }
+    //       }
+    //     }
+    //   }
+
+    .imageSlider {
+        position: relative;
+        display: flex;
+        justify-content: center; // Center horizontally
+        align-items: center; // Center vertically
+        height: 400px;
+      
+        img {
+          width: auto; // Maintain the original width
+          max-width: 100%; // Prevent overflow
+          height: 100%;
+          object-fit: contain; // Ensure the image fits without cropping
+          border-radius: 10px;
+        }
+      
+        .sliderNav {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          right: 0;
+          display: flex;
+          justify-content: space-between;
+          transform: translateY(-50%);
+          padding: 0 12px;
+      
+          button {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            font-family: Plus Jakarta Sans;
+            padding: 6px 12px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 16px;
+            transition: background 0.2s;
+      
+            &:hover {
+              background: rgba(0, 0, 0, 0.7);
+            }
+          }
+        }
+      }
+      
+      .projectInfo {
+        width: 85%;
+        display: flex   ;
+        justify-content: center;
+        flex-direction: column;
+        padding: 16px;
+
+        .title {
+          font-size: 20px;
+          font-weight: bold;
+          font-family: Plus Jakarta Sans;
+          color: var(--dashboard-heading);
+        }
+
+        .description {
+          text-align: start;
+          font-size: 16px;
+          line-height: 22.4px;
+          color: var(--description);
+          margin: 10px 0;
+          font-family: Plus Jakarta Sans;
+        }
+
+        .techStack {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+          margin: 12px 0;
+
+          .badge {
+            background: #f0f0f0;
+            color: #333;
+            font-size: 0.8rem;
+            font-family: Plus Jakarta Sans;
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-weight: 500;
+          }
+        }
+
+        .githubLink {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          text-decoration: none;
+          color: var(--description);
+          font-weight: bold;
+          margin-top: 10px;
+          font-family: Plus Jakarta Sans;
+          &:hover {
+            color: var(--dashboard-heading);
+          }
+
+          img {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -7,7 +7,7 @@
   .heading {
     text-align: center;
     color: var(--description);
-    font-size: 26px;
+    font-size: 36px;
     font-family: Plus Jakarta Sans;
     line-height: 22.4px;
     word-wrap: break-word;
@@ -16,7 +16,7 @@
     text-align: center;
     font-family: Plus Jakarta Sans;
     font-weight: 500px;
-    font-size: 17px;
+    font-size: 19px;
     color: var(--dashboard-heading);
   }
   .intro {
@@ -30,16 +30,40 @@
       color: var(--description);
       font-family: Plus Jakarta Sans;
       line-height: 22.4px;
-      font-size: 22px;
+      font-size: 26px;
       word-wrap: break-word;
     }
     .text {
       font-family: Plus Jakarta Sans;
-      font-weight: 500px;
-      font-size: 17px;
-      line-height: 26.4px;
-      color: var(--secondary-color);
+      font-weight: 400px;
+      font-size: 19px;
+      letter-spacing: 1px;
+      line-height: 28.4px;
+      color: var(--description);
+    }
+    .skills {
+      padding-top: 8px;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr); /* 4 items per row */
+      justify-content: center;
+      width: 100%;
+      gap: 18px;
+      align-items: center;
+      .image {
+        border-radius: 80px;
+        padding: 8px;
+        background: #191919;
+        transition: transform 0.3s ease;
+        &:hover{
+            transform: scale(1.2);
+        }
+      }
+      .img{
+        transition: transform 0.3s ease;
+        &:hover{
+            transform: scale(1.2);
+        }
+      }
     }
   }
-  
 }

@@ -1,7 +1,7 @@
 @import "../global.scss";
 @import "../variables.scss";
 .scrolled {
-  box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
+  box-shadow: var(--box-shadow);
 }
 .mainContainer {
   padding: 24px 62px;
@@ -19,7 +19,7 @@
     .menuItemContainer {
       .menuItem {
         color: var(--secondary-color);
-        font-size: 16px;
+        font-size: 18px;
         font-family: Plus Jakarta Sans;
         font-weight: 500;
         line-height: 22.4px;
@@ -59,7 +59,7 @@
       color: #fff;
       text-align: right;
       font-family: Plus Jakarta Sans;
-      font-size: 15px;
+      font-size: 18px;
       font-style: normal;
       font-weight: 600;
       line-height: 24px; /* 150% */

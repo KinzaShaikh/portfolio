@@ -1,0 +1,103 @@
+@import "../global.scss";
+.container {
+  width: 100%;
+  background-color: var(--primary-color);
+  padding-top: 32px;
+  padding-bottom: 32px;
+  .heading {
+    text-align: center;
+    color: var(--description);
+    font-size: 36px;
+    font-family: Plus Jakarta Sans;
+    line-height: 22.4px;
+    word-wrap: break-word;
+  }
+  .description {
+    text-align: center;
+    font-family: Plus Jakarta Sans;
+    font-weight: 500px;
+    font-size: 19px;
+    color: var(--dashboard-heading);
+  }
+  .cards {
+    display: flex;
+    flex-direction: column;
+    padding-top: 42px;
+    padding-left: 32px;
+    padding-right: 32px;
+    gap: 32px;
+    .experienceCard {
+      box-shadow: var(--card-shadow);
+      background-color: var(--card-color);
+      border-radius: 8px;
+      padding: 20px;
+      padding-left: 32px;
+      padding-right: 32px;
+      width: 70%;
+      margin: auto;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--card-shadow);
+      }
+      .company {
+        flex: 1;
+        display: flex;
+        align-items: center;
+
+        .companyLogo {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-right: 12px;
+        }
+
+        .companyName {
+          font-weight: bold;
+          font-size: 1rem;
+          color: var(--description);
+        }
+      }
+
+      .experienceDetails {
+        //   flex: 2;
+        padding: 0 16px;
+
+        // Optional heading for this section
+        .heading {
+          font-size: 1.125rem;
+          font-weight: bold;
+          margin-bottom: 8px;
+          font-family: Plus Jakarta Sans;
+          color: var(--description);
+        }
+
+        // Bullet points list
+        ul {
+          margin: 0;
+
+          li {
+            margin-bottom: 8px;
+            list-style: disc;
+            font-family: Plus Jakarta Sans;
+            font-size: 0.95rem;
+            color: var(--description);
+          }
+        }
+      }
+
+      .timePeriod {
+        flex: 1;
+        font-size: 0.875rem;
+        text-align: right;
+        font-family: Plus Jakarta Sans;
+        color: var(--description);
+      }
+    }
+  }
+}
