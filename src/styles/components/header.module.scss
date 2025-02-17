@@ -63,6 +63,7 @@
       font-style: normal;
       font-weight: 600;
       line-height: 24px; /* 150% */
+      text-decoration: none;
       cursor: pointer;
       &:hover {
         background-color: var(--blue-color);
@@ -210,6 +211,7 @@
         font-style: normal;
         font-weight: 600;
         line-height: 24px; /* 150% */
+        text-decoration: none;
         cursor: pointer;
         &:hover {
           background-color: var(--blue-color);

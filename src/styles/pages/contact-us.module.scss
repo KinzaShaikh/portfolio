@@ -1,0 +1,123 @@
+@import "../global.scss";
+@import "../variables.scss";
+.contactContainer {
+  text-align: center;
+  padding: 40px;
+  background-color: var(--primary-color);
+  margin: 0 auto;
+
+  h2 {
+    text-align: center;
+    color: var(--description);
+    font-size: 40px;
+    font-family: Plus Jakarta Sans;
+    line-height: 22.4px;
+    word-wrap: break-word;
+  }
+
+  p {
+    text-align: center;
+    font-family: Plus Jakarta Sans;
+    font-weight: 500px;
+    font-size: 19px;
+    color: var(--dashboard-heading);
+  }
+
+  .socialLinks {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+
+    a {
+      color: #333;
+      font-size: 32px;
+      transition: color 0.3s;
+
+      &:hover {
+        color: var(--blue-color);
+      }
+    }
+  }
+  .contactContainer {
+    max-width: 500px; // Set a fixed width
+    width: 90%; // Make it responsive
+    margin: 0 auto; // Center it
+    text-align: center;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #333;
+      font-family: Plus Jakarta Sans;
+    }
+
+    .contactForm {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      .inputGroup {
+        text-align: left;
+
+        input,
+        textarea {
+          width: 95%;
+          padding: 12px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          font-size: 16px;
+          transition: border 0.3s;
+          font-family: Plus Jakarta Sans;
+          &:focus {
+            border-color: #007bff;
+            outline: none;
+          }
+        }
+
+        textarea {
+          resize: none;
+          height: 100px;
+          font-family: Plus Jakarta Sans;
+        }
+      }
+
+      .errorText {
+        font-family: Plus Jakarta Sans;
+        color: red;
+        font-size: 13px;
+      }
+      button {
+        padding: 12px;
+        border: none;
+        background: #1e5faa;
+        color: white;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: Plus Jakarta Sans;
+        transition: background 0.3s;
+
+        &:hover {
+          background-color: var(--blue-color);
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: $breakpoint-mobile) {
+  .contactContainer {
+    padding-left: 8px;
+    padding-right: 8px;
+    h2 {
+      font-size: 32px;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
+}

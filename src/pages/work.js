@@ -6,7 +6,7 @@ import fiverr from "../assets/icons8-fiverr.svg";
 function Work() {
   return (
     <div className={styles.container}>
-      <h2 className={styles.heading}>WORK EXPERIENCE</h2>
+      <h2 className={styles.heading}>Work Experience</h2>
       <p className={styles.description}>Highlights of my journey so far</p>
       <div className={styles.cards}>
         <div className={styles.experienceCard}>

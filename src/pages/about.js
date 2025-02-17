@@ -18,7 +18,7 @@ import vscode from '../assets/vscode.svg';
 function About() {
   return (
     <div className={styles.container}>
-      <h2 className={styles.heading}>ABOUT ME</h2>
+      <h2 className={styles.heading}>About Me</h2>
       <p className={styles.description}>
         Software engineer dedicated to creating meaningful and efficient digital
         solutions

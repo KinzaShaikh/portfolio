@@ -1,0 +1,113 @@
+@import "../global.scss";
+@import "../variables.scss";
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  padding: 0 10%;
+
+  .textContainer {
+    .wave {
+      display: inline-block;
+      animation: wave-animation 1.5s infinite;
+    }
+
+    @keyframes wave-animation {
+      0% {
+        transform: rotate(0deg);
+      }
+      20% {
+        transform: rotate(20deg);
+      }
+      40% {
+        transform: rotate(-10deg);
+      }
+      60% {
+        transform: rotate(20deg);
+      }
+      80% {
+        transform: rotate(-10deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+    flex: 1;
+    h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      word-spacing: 8px;
+      color: var(--description);
+      font-family: Plus Jakarta Sans;
+      span {
+        color: var(--blue-color);
+      }
+    }
+    p {
+      font-size: 22px;
+      line-height: 26px;
+      word-spacing: 8px;
+      font-weight: 500;
+      color: var(--dashboard-heading);
+      font-family: Plus Jakarta Sans;
+      margin-top: 10px;
+    }
+  }
+
+  .imageContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 260px;
+      height: 260px;
+      object-fit: cover;
+      box-shadow: var(--box-shadow);
+      background: linear-gradient(var(--primary-color), var(--primary-color))
+          padding-box,
+        linear-gradient(to right, darkblue, darkorchid) border-box;
+      border-radius: 50em;
+      border: 4px solid transparent;
+      transition: transform 0.3s ease;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+@media only screen and (max-width: $breakpoint-mobile) {
+    .home{
+        flex-direction: column;
+        height: auto;
+        padding: 8px;
+        .textContainer{
+            h1{
+                font-size: 32px;
+            }
+            p{
+                font-size: 18px;
+            }
+        }
+        .imageContainer{
+            img{
+                width: 180px;
+                height: 180px;
+            }
+        }
+    }
+}
+@media only screen and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet) {
+    .home{
+        height: auto;
+        padding: 8px;
+        .imageContainer{
+            img{
+                width: 240px;
+                height: 240px;
+            }
+        }
+    }
+}

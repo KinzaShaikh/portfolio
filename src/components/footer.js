@@ -10,9 +10,16 @@ function Footer() {
         <div className={styles.menuItemContainer}>
           {menuItems.map((item) => {
             return (
-                <Link to={item.path} className={styles.menuItem} key={item.id}>
-                  {item.name}
-                </Link>
+              <Link
+                to={item.path}
+                smooth={true}
+                duration={500}
+                offset={-80}
+                className={styles.menuItem}
+                key={item.id}
+              >
+                {item.name}
+              </Link>
             );
           })}
         </div>

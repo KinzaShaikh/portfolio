@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styles from "../styles/pages/projects.module.scss";
-import sound from "../assets/pw7_1.png";
 import pw7_1 from "../assets/pw7_1.png";
 import pw7_2 from "../assets/pw7_2.png";
 import pw7_3 from "../assets/pw7_3.png";
@@ -20,8 +19,6 @@ import alumni_4 from "../assets/alumni_website4.PNG";
 import pirate_1 from "../assets/pirate_qr1.jpg";
 import pirate_2 from "../assets/pirate_qr2.jpg";
 import pirate_3 from "../assets/pirate_qr3.jpg";
-import marketplug from "../assets/marketplug.png";
-import fiverr from "../assets/github.svg";
 import github from "../assets/github.svg";
 function Projects() {
   const projects = [
@@ -42,10 +39,10 @@ function Projects() {
     },
     {
       title: "Alumni Website for University",
-      images: [alumni_3, alumni_1, alumni_4, alumni_1],
+      images: [alumni_1, alumni_2, alumni_4, alumni_3],
       description:
         "To maintain Alumni record, we developed website with MERN technology. Semantic-UI library was used fascinate the front-end. It has Dashboard to add, remove, search, update alumni members. If you'd like to explore the code on GitHub, visit the project repository.",
-      techStack: ["ReactJS", "NodeJS", "MongoDB", "ExpressJS"],
+      techStack: ["ReactJS","Redux", "NodeJS", "MongoDB", "ExpressJS"],
       githubLink: "https://github.com/KinzaShaikh/Alumni-Website",
     },
     {
@@ -53,7 +50,7 @@ function Projects() {
       images: [RA_1, RA_2, RA_3, RA_4, RA_5, RA_6, RA_7, RA_8],
       description:
         "The Religious Assistant app is designed to meet the requirements of Muslim and Hindu users alike. It provides a range of essential features, such as locating nearby Mosques and Temples, accurate prayer timings for each mosque, tracking of missed prayers and fasts, and Zakat calculations. For children, the app offers engaging games to learn Namaz. Additionally, users can access Qibla direction information, receive alerts for vegetarian and non-vegetarian days, as well as notifications for funeral arrangements, Eid prayers, and donation drives.",
-      techStack: ["React Native", "NodeJS", "MongoDB", "ExpressJS"],
+      techStack: ["React Native","Redux", "NodeJS", "MongoDB", "ExpressJS"],
       githubLink: "https://github.com/Religious-Assistant",
     },
     {
@@ -61,14 +58,14 @@ function Projects() {
         images: [pirate_1, pirate_2, pirate_3],
         description:
           "Pirate QR is a web application designed to simplify the process of attaching photos and videos to QR codes. With this app, users can scan any QR code, such as those found on products, and easily associate multimedia content with it. The attached media can then be accessed by anyone who scans the same QR code using the app. If you'd like to explore the project further, you can visit the link.",
-        techStack: ["React Native", "NodeJS"],
+        techStack: ["ReactJS", "NodeJS"],
         githubLink: "",
       },
   ];
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.heading}>PROJECTS</h2>
+      <h2 className={styles.heading}>Projects</h2>
       <p className={styles.description}>Highlights of my journey so far</p>
       <div className={styles.projects}>
         {projects.map((project, index) => (

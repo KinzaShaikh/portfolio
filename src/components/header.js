@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/components/header.module.scss";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { Link, scroller } from "react-scroll";
+import { Link as RouterLink } from "react-router-dom";
 import { useMediaQuery } from "@react-hook/media-query";
 import { menuItems, mobile_breakpoint } from "../utils/constants";
 import Hamburger from "hamburger-react";
 import lightMode from "../assets/light-mode.svg";
 import darkMode from "../assets/dark-mode.svg";
+const savedTheme = localStorage.getItem("theme") || "dark";
+document.body.setAttribute("data-theme", savedTheme);
 function Header() {
   const navigation = useNavigate();
   const isMobile = useMediaQuery(mobile_breakpoint);
@@ -34,29 +38,23 @@ function Header() {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-  const theme = true;
-  const [selectedTheme, setSelectedTheme] = useState(() => {
-    // Set theme to "dark" if there's no theme in localStorage
-    const savedTheme = localStorage.getItem("theme");
-    return savedTheme ? savedTheme : "dark";
-  });
-  useEffect(() => {
-    if (theme) {
-      setSelectedTheme("dark");
-    } else {
-      setSelectedTheme("light");
-    }
-  }, [theme]);
+
+  const [selectedTheme, setSelectedTheme] = useState(savedTheme);
 
   useEffect(() => {
-    if (selectedTheme === "dark") {
-      document.querySelector("body").setAttribute("data-theme", "dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.querySelector("body").setAttribute("data-theme", "light");
-      localStorage.setItem("theme", "light");
-    }
+    document.body.setAttribute("data-theme", selectedTheme);
+    localStorage.setItem("theme", selectedTheme);
   }, [selectedTheme]);
+
+  const toggleTheme = () => {
+    setSelectedTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  };
+  function handleScrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  }
   return (
     <>
       <div
@@ -64,25 +62,39 @@ function Header() {
           scrollPosition > 0 ? styles.scrolled : ""
         }`}
       >
-        <Link
+        <RouterLink
           style={{
             color: "#3f7bc9",
             fontSize: 28,
             fontFamily: "Plus Jakarta Sans",
             fontWeight: 600,
             textDecoration: "none",
+            cursor: "pointer",
           }}
           to={"/"}
         >
           {"<KINZA/>"}
-        </Link>
+        </RouterLink>
         {!isMobile && (
           <div className={styles.menuContainer}>
             <>
               {menuItems.map((item) => {
                 return (
                   <div className={styles.menuItemContainer}>
-                    <Link to={item.path} className={styles.menuItem}>
+                    <Link
+                      key={item.id}
+                      to={item.path}
+                      className={styles.menuItem}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        window.history.pushState(null, "", `#${item.path}`);
+                        scroller.scrollTo(item.path, {
+                          smooth: true,
+                          duration: 600,
+                          offset: -80,
+                        });
+                      }}
+                    >
                       {item.name}
                     </Link>
                   </div>
@@ -118,6 +130,7 @@ function Header() {
             )}
 
             <a
+              href="https://drive.google.com/file/d/1zjlHeGGt23kKkwCz_o-fTai7BoxQfqAb/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.button}
@@ -140,9 +153,15 @@ function Header() {
                   className={`${styles.item} ${
                     activeItem === item.id ? styles.activeItem : ""
                   }`}
-                  onClick={() => {
-                    handleTabClick(item.id);
-                    handleItemClick(item.path);
+                  onClick={(e) => {
+                    e.preventDefault(); // Prevent default anchor jump
+                    window.history.pushState(null, "", `#${item.path}`);
+
+                    scroller.scrollTo(item.path, {
+                      smooth: true,
+                      duration: 600,
+                      offset: -80,
+                    });
                   }}
                 >
                   <div className={styles.text}>{item.name}</div>
@@ -154,23 +173,20 @@ function Header() {
             {selectedTheme == "dark" ? (
               <img
                 src={lightMode}
-                onClick={() => {
-                  setSelectedTheme("light");
-                }}
+                onClick={toggleTheme}
                 style={{ cursor: "pointer" }}
               />
             ) : (
               <img
                 src={darkMode}
-                onClick={() => {
-                  setSelectedTheme("dark");
-                }}
+                onClick={toggleTheme}
                 style={{ cursor: "pointer" }}
               />
             )}
 
             <a
               target="_blank"
+              href="https://drive.google.com/file/d/1zjlHeGGt23kKkwCz_o-fTai7BoxQfqAb/view?usp=sharing"
               rel="noopener noreferrer"
               className={styles.button}
             >

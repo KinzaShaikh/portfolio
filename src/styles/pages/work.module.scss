@@ -1,4 +1,6 @@
 @import "../global.scss";
+@import "../variables.scss";
+
 .container {
   width: 100%;
   background-color: var(--primary-color);
@@ -7,7 +9,7 @@
   .heading {
     text-align: center;
     color: var(--description);
-    font-size: 36px;
+    font-size: 40px;
     font-family: Plus Jakarta Sans;
     line-height: 22.4px;
     word-wrap: break-word;
@@ -97,6 +99,76 @@
         text-align: right;
         font-family: Plus Jakarta Sans;
         color: var(--description);
+      }
+    }
+  }
+}
+@media only screen and (max-width: $breakpoint-mobile) {
+  .container{
+    .heading{
+      font-size: 32px;
+    }
+    .description{
+      font-size: 18px;
+    }
+    .cards {
+      padding-left: 8px;
+      padding-right: 8px;
+      gap: 20px;
+
+      .experienceCard {
+        width: 90%; /* Full width on mobile */
+        padding: 12px; /* Reduce padding */
+        flex-direction: column; /* Stack items vertically */
+
+        .company {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+
+          .companyLogo {
+            width: 40px;
+            height: 40px;
+            margin-right: 0;
+            margin-bottom: 8px;
+          }
+
+          .companyName {
+            font-size: 0.9rem;
+          }
+        }
+
+        .experienceDetails {
+          padding: 8px;
+          
+          .heading {
+            font-size: 1rem;
+            text-align: center;
+          }
+
+          ul {
+            padding-left: 16px;
+            li {
+              font-size: 0.85rem;
+            }
+          }
+        }
+
+        .timePeriod {
+          text-align: center;
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet) {
+  .container{
+    .cards{
+      padding-left: 16px;
+      padding-right: 16px;
+      .experienceCard{
+        width: 90%;
       }
     }
   }

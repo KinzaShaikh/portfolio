@@ -1,0 +1,14 @@
+@import "../global.scss";
+@import "../variables.scss";
+.text {
+  font-size: 30px;
+  background: -webkit-radial-gradient(#28a1ee,#8659cd ,#28a1ee,#e610aa, #8659cd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: Plus Jakarta Sans;
+}
+@media only screen and (max-width: $breakpoint-mobile) {
+    .text{
+        font-size: 24px;
+    }
+}
