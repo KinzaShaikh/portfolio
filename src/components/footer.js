@@ -1,7 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import styles from "../styles/components/footer.module.scss";
 import { menuItems } from "../utils/constants";
+import { Link, scroller } from "react-scroll";
 
 function Footer() {
   return (
@@ -11,12 +11,18 @@ function Footer() {
           {menuItems.map((item) => {
             return (
               <Link
-                to={item.path}
-                smooth={true}
-                duration={500}
-                offset={-80}
-                className={styles.menuItem}
                 key={item.id}
+                to={item.path}
+                className={styles.menuItem}
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.history.pushState(null, "", `#${item.path}`);
+                  scroller.scrollTo(item.path, {
+                    smooth: true,
+                    duration: 600,
+                    offset: -80,
+                  });
+                }}
               >
                 {item.name}
               </Link>

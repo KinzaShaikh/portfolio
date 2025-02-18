@@ -32,9 +32,7 @@ function Header() {
 
   const [isOpen, setIsOpen] = useState(false);
   const [activeItem, setActiveItem] = useState(null);
-  const handleTabClick = (tabId) => {
-    setActiveItem(tabId);
-  };
+  
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -49,12 +47,6 @@ function Header() {
   const toggleTheme = () => {
     setSelectedTheme((prev) => (prev === "dark" ? "light" : "dark"));
   };
-  function handleScrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  }
   return (
     <>
       <div
@@ -72,6 +64,10 @@ function Header() {
             cursor: "pointer",
           }}
           to={"/"}
+          onClick={(e) => {
+            e.preventDefault();
+            window.location.href = "/";
+          }}
         >
           {"<KINZA/>"}
         </RouterLink>
@@ -130,7 +126,7 @@ function Header() {
             )}
 
             <a
-              href="https://drive.google.com/file/d/1zjlHeGGt23kKkwCz_o-fTai7BoxQfqAb/view?usp=sharing"
+              href="https://drive.google.com/file/d/1qSqnGifsQDc-mkLYBBFeemQxbUMROCOU/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.button}
@@ -186,7 +182,7 @@ function Header() {
 
             <a
               target="_blank"
-              href="https://drive.google.com/file/d/1zjlHeGGt23kKkwCz_o-fTai7BoxQfqAb/view?usp=sharing"
+              href="https://drive.google.com/file/d/1qSqnGifsQDc-mkLYBBFeemQxbUMROCOU/view?usp=sharing"
               rel="noopener noreferrer"
               className={styles.button}
             >

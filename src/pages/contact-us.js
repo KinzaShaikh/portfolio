@@ -2,6 +2,7 @@ import styles from "../styles/pages/contact-us.module.scss";
 import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
 import { useState } from "react";
 import emailjs from "emailjs-com";
+import { toast } from "react-toastify";
 
 const ContactMe = () => {
   return (
@@ -30,7 +31,7 @@ const ContactForm = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
+  
   const validateForm = () => {
     let newErrors = {};
     if (!formData.name.trim()) newErrors.name = "Name is required";
@@ -48,23 +49,23 @@ const ContactForm = () => {
     }
     emailjs
       .send(
-        "service_6opns4w",  // Replace with EmailJS Service ID
-        "template_8nj85vw", // Replace with EmailJS Template ID
+        process.env.REACT_APP_EMAIL_JS_SERVICE_ID,  // EmailJS Service ID
+        process.env.REACT_APP_EMAIL_JS_TEMPLATE_ID, // EmailJS Template ID
         {
           name: formData.name,
           email: formData.email,
-          toemail:'kinzashaikh38@gmail.com',
+          toemail:process.env.REACT_APP_EMAIL_ADDRESS,
           subject:'Message through portfolio',
           message: formData.message,
         },
-        "user_5gEKQsdapzgshXDDEJBtQ" // Replace with EmailJS User ID
+        process.env.REACT_APP_EMAIL_JS_USER_ID // EmailJS User ID
       )
       .then(() => {
-        alert("Your message has been sent successfully!");
+        toast.success("Your message has been sent successfully!");
         setFormData({ name: "", email: "", message: "" });
       })
       .catch((e) =>
-        alert("Failed to send message. Try again.")
+        toast.error("Failed to send message. Try again!")
     );
     setErrors({});
   };
