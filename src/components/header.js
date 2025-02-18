@@ -125,14 +125,14 @@ function Header() {
               />
             )}
 
-            <a
+            {/* <a
               href="https://drive.google.com/file/d/1hDkYWNTvfQtwaG041VZHIGT9rh6O2Wb3/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.button}
             >
               Resume
-            </a>
+            </a> */}
           </div>
         )}
       </div>
@@ -180,14 +180,14 @@ function Header() {
               />
             )}
 
-            <a
+            {/* <a
               target="_blank"
               href="https://drive.google.com/file/d/1hDkYWNTvfQtwaG041VZHIGT9rh6O2Wb3/view?usp=sharing"
               rel="noopener noreferrer"
               className={styles.button}
             >
               Resume
-            </a>
+            </a> */}
           </div>
         </div>
       )}
