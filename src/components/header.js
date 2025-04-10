@@ -32,7 +32,7 @@ function Header() {
 
   const [isOpen, setIsOpen] = useState(false);
   const [activeItem, setActiveItem] = useState(null);
-  
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -101,8 +101,30 @@ function Header() {
         )}
         {isMobile ? (
           <div className={styles.rightContainer}>
-            <div onClick={toggleMenu}>
-              <Hamburger size={24} color="#505F79" />
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                gap: "8px",
+              }}
+            >
+              <div>
+                {selectedTheme === "dark" ? (
+                  <img
+                    src={lightMode}
+                    onClick={toggleTheme}
+                    style={{ cursor: "pointer", width: "28px", height: "28px" }}
+                  />
+                ) : (
+                  <img
+                    src={darkMode}
+                    onClick={toggleTheme}
+                    style={{ cursor: "pointer", width: "28px", height: "28px" }}
+                  />
+                )}
+              </div>
+              <Hamburger size={24} color="#505F79" onToggle={toggleMenu} />
             </div>
           </div>
         ) : (
@@ -165,22 +187,23 @@ function Header() {
               );
             })}
           </div>
-          <div className={styles.buttonsContainer}>
-            {selectedTheme == "dark" ? (
-              <img
-                src={lightMode}
-                onClick={toggleTheme}
-                style={{ cursor: "pointer" }}
-              />
-            ) : (
-              <img
-                src={darkMode}
-                onClick={toggleTheme}
-                style={{ cursor: "pointer" }}
-              />
-            )}
+          {!isMobile && (
+            <div className={styles.buttonsContainer}>
+              {selectedTheme == "dark" ? (
+                <img
+                  src={lightMode}
+                  onClick={toggleTheme}
+                  style={{ cursor: "pointer" }}
+                />
+              ) : (
+                <img
+                  src={darkMode}
+                  onClick={toggleTheme}
+                  style={{ cursor: "pointer" }}
+                />
+              )}
 
-            {/* <a
+              {/* <a
               target="_blank"
               href="https://drive.google.com/file/d/1hDkYWNTvfQtwaG041VZHIGT9rh6O2Wb3/view?usp=sharing"
               rel="noopener noreferrer"
@@ -188,7 +211,8 @@ function Header() {
             >
               Resume
             </a> */}
-          </div>
+            </div>
+          )}
         </div>
       )}
     </>
